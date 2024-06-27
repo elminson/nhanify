@@ -39,7 +39,7 @@ jobs:
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data
-        run: psql --host=postgres --username=postgres --password=postgres < lib/schema.sql
+        run: psql --username=postgres < lib/schema.sql
         # Environment variables used by the `client.js` script to create
         # a new PostgreSQL table.
         env:
@@ -47,4 +47,6 @@ jobs:
           POSTGRES_HOST: localhost
           # The default PostgreSQL port
           POSTGRES_PORT: 5432
+          PGPASSWORD: postgres
+
 
